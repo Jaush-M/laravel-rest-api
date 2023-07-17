@@ -6,9 +6,9 @@ use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Invoices>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Invoice>
  */
-class InvoicesFactory extends Factory
+class InvoiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,7 @@ class InvoicesFactory extends Factory
         $status = $this->faker->randomElement(['B', 'P', 'V']);
 
         return [
-            'customer_id' => Customer::factory(),
+            'customer_id' => Customer::inRandomOrder()->first()->id,
             'amount' => $this->faker->numberBetween(100, 2000),
             'status' => $status,
             'billed_date' => $this->faker->dateTimeThisDecade(),

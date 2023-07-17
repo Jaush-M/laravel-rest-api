@@ -1,0 +1,296 @@
+{
+    "info": {
+        "_postman_id": "d3c1fc56-05cd-4d45-adb0-a8322aca2745",
+        "name": "Api Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "28135052"
+    },
+    "item": [
+        {
+            "name": "Get Customer",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "3|i1HUKT1HGqnrZv02GVzSiUFHLlxb0enrwtLP8523",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/customers",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "customers"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create New Customer",
+            "protocolProfileBehavior": {
+                "disabledSystemHeaders": {
+                    "accept": true
+                }
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "1|UJcQDDIv7JVAcvBvJR4QJu2z9ZJlBmivfcz6q4Ci",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Jane Doe\",\r\n    \"type\": \"I\",\r\n    \"email\": \"jane@email.com\",\r\n    \"address\": \"Jane Addr\",\r\n    \"city\": \"Jane City\",\r\n    \"state\": \"Jane State\",\r\n    \"postalCode\": \"623233\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/customers",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "customers"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Edit Customer",
+            "protocolProfileBehavior": {
+                "disabledSystemHeaders": {
+                    "accept": true
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Build Doe\",\r\n    \"type\": \"B\",\r\n    \"email\": \"build@business.com\",\r\n    \"address\": \"Build Addr\",\r\n    \"city\": \"Build City\",\r\n    \"state\": \"Build State\",\r\n    \"postalCode\": \"434024\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/customers/15",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "customers",
+                        "15"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Customer",
+            "protocolProfileBehavior": {
+                "disabledSystemHeaders": {
+                    "accept": true
+                }
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|oHdxFFeu99qXXEv5LnF7zEfDgtic4fQmsnMpyHFo",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Jane Doe\",\r\n    \"state\": \"State Doe\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/customers/15",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "customers",
+                        "15"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Customer with Invoices",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/customers/15?includeInvoice=true",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "customers",
+                        "15"
+                    ],
+                    "query": [
+                        {
+                            "key": "includeInvoice",
+                            "value": "true"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create Invoices in Bulk",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "[\r\n    {\r\n        \"customerId\": \"4\",\r\n        \"status\": \"B\",\r\n        \"amount\": \"1000\",\r\n        \"billedDate\": \"1999-05-10 14:24:00\",\r\n        \"paidDate\": null\r\n    },\r\n    {\r\n        \"customerId\": \"4\",\r\n        \"status\": \"P\",\r\n        \"amount\": \"2312\",\r\n        \"billedDate\": \"1889-12-10 14:24:00\",\r\n        \"paidDate\": \"2969-06-23 14:24:00\"\r\n    },\r\n    {\r\n        \"customerId\": \"4\",\r\n        \"status\": \"V\",\r\n        \"amount\": \"1212\",\r\n        \"billedDate\": \"2033-07-05 14:24:00\",\r\n        \"paidDate\": null\r\n    },\r\n    {\r\n        \"customerId\": \"5\",\r\n        \"status\": \"B\",\r\n        \"amount\": \"6666\",\r\n        \"billedDate\": \"3322-12-30 14:24:00\",\r\n        \"paidDate\": null\r\n    }\r\n]",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/invoices/bulk",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "invoices",
+                        "bulk"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Authenticated Token",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"john doe\",\r\n    \"email\": \"email@email.com\",\r\n    \"password\": \"John@123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/auth/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "auth",
+                        "register"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
